@@ -1,14 +1,18 @@
+"""
+    client file
+"""
+
 import socket
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+def main():
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    host = socket.gethostname()
+    addr = (host, 24611)
 
-sock.connect()
+    sock.connect(addr)
 
-addr = ("1.2.3.4", 24611)
-
-sock.connect(addr)
-
-user = input()
-while(user.lower() != "n"):
-	sock.sendall(user)
-	sock.recv()
+    user = input()
+    while(user.lower() != "n"):
+    	sock.sendall(user.encode('utf-8'))
+    	sock.recv(1024)
+main()
