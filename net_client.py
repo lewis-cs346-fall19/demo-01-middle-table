@@ -11,7 +11,7 @@ def main():
 
     sock.connect(addr)
     in_msg = sock.recv(1024)
-    print(in_msg)
+    print(str(in_msg))
     user = input()
     while(user.lower() != "n"):
         sock.sendall(user.encode('utf-8'))

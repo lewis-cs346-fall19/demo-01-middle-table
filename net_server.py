@@ -8,8 +8,8 @@ def main():
 
     sock.listen(5)
     connectedSock, clientAddress = sock.accept()
-    print("Got a connection from %s" % str(addr))
-    msg = 'Thank you for connecting'+ "\n"
+    print("Connected with %s\n" % str(addr))
+    msg = "Connected\n"
     connectedSock.send(msg.encode('ascii'))
     while True:
         try:
