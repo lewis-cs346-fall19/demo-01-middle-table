@@ -28,6 +28,7 @@ def main():
                 #receive message
                 msg = connectedSock.recv(1024).decode()
 
+                #if no message break loop and close socket
                 if not msg:
                     break
 
